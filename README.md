@@ -23,8 +23,30 @@ Work in progress includes:
 - Strava API
 - OpenAI for analysis and recommendations
 
-
 ## 📂 Project Structure
+
+```
+/ (repo root)
+├─ README.md
+├─ .env.example
+├─ .gitignore
+├─ package.json OR pyproject.toml / requirements.txt
+├─ src/
+│  ├─ app.py OR index.js            # entry point
+│  ├─ config/
+│  │  └─ settings.*                 # env / config loading
+│  ├─ strava/                       # Strava API integration
+│  │  ├─ auth.py
+│  │  └─ client.py 
+│  ├─ ingestion/                    # fetch & normalize activities
+│  ├─ analysis/                     # metric extraction & AI orchestration
+│  ├─ models/                       # trained models or model interfaces
+│  └─ utils/                        # helpers, logging, retries
+├─ tests/
+│  ├─ unit/
+│  └─ integration/
+```
+
 ## 📡 Strava API
 
 Reference: https://developers.strava.com/docs/reference/ (API reference)  
