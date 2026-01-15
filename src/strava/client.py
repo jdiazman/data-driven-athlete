@@ -64,3 +64,7 @@ class StravaClient:
             params["after"] = after_timestamp
 
         return self._get("/athlete/activities", params=params)
+    
+    def get_actvity(self, activity_id):
+        """Fetch a specific activity by ID."""
+        return self._get(f"/activities/{activity_id}")
