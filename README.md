@@ -2,7 +2,7 @@
 A lightweight application designed to analyze Strava data and generate personalized training plans using AI.
 
 ## 📌 Description
-Trainalyze aims to help athletes better understand their performance and plan their training intelligently. By processing activity data from Strava, the app will generate reports, identify patterns, and propose tailored training sessions powered by AI models.
+DataDrivenAthlete aims to help athletes better understand their performance and plan their training intelligently. By processing activity data from Strava, the app will generate reports, identify patterns, and propose tailored training sessions powered by AI models.
 
 ## 🚧 Project Status
 This repository is currently in its early development phase.  
@@ -19,29 +19,35 @@ Work in progress includes:
 - Provide a clear, continuous view of athlete development
 
 ## 🧠 Planned Technologies
-- Python / Node (to be decided)
+- Python
 - Strava API
 - OpenAI for analysis and recommendations
 
 ## 📂 Project Structure
 
 ```
+```
 / (repo root)
 ├─ README.md
+├─ .env
 ├─ .env.example
 ├─ .gitignore
-├─ package.json OR pyproject.toml / requirements.txt
+├─ requirements.txt
 ├─ src/
-│  ├─ app.py OR index.js            # entry point
+│  ├─ main.py                      # entry point
+│  ├─ ai/                          # AI orchestration / prompts
+│  ├─ analysis/
+│  │  ├─ metrics.py
+│  │  └─ serializer.py
 │  ├─ config/
-│  │  └─ settings.*                 # env / config loading
-│  ├─ strava/                       # Strava API integration
-│  │  ├─ auth.py
-│  │  └─ client.py 
-│  ├─ ingestion/                    # fetch & normalize activities
-│  ├─ analysis/                     # metric extraction & AI orchestration
-│  ├─ models/                       # trained models or model interfaces
-│  └─ utils/                        # helpers, logging, retries
+│  │  └─ settings.py               # env / config loading
+│  ├─ report/
+│  │  ├─ charts.py
+│  │  └─ generator.py
+│  ├─ storage/                      # persistence layer (DB, files)
+│  └─ strava/
+│     ├─ client.py
+│     └─ test_client.py
 ├─ tests/
 │  ├─ unit/
 │  └─ integration/
