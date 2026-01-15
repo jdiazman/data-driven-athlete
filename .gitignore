@@ -14,3 +14,11 @@ build/
 dist/
 *.egg-info/
 pip-wheel-metadata/
+
+#resources
+*.png
+*.jpg
+*.pdf
+*.gif
+*.mp4
+*.mov
